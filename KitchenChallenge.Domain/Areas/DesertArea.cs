@@ -1,4 +1,5 @@
 ﻿using KitchenChallenge.Domain.Areas.Interfaces;
+using KitchenChallenge.Domain.Dishes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,8 +10,6 @@ namespace KitchenChallenge.Domain.Areas
     public class DesertArea : IKitchenArea
     {
         public static DesertArea Instance { get; set; }
-        public int OrderNumber { get; private set; }
-
         private DesertArea() {}
 
         public static DesertArea GetInstance()
@@ -21,13 +20,13 @@ namespace KitchenChallenge.Domain.Areas
             return Instance;
         }
 
-        public async Task PrepareDish()
+        public async Task PrepareItemAsync(Item item)
         {
-            Console.WriteLine("Preparing desert...");
-            await Task.Delay(1000);
-            OrderNumber++;
+            Console.WriteLine($"Preparing desert ({item.Description})...");
 
-            Console.WriteLine("Desert done!");
+            await Task.Delay(1000);
+
+            Console.WriteLine($"Desert ({item.Description}) done!");
         }
     }
 }

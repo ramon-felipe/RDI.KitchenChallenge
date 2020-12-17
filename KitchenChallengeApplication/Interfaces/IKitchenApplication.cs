@@ -8,6 +8,6 @@ namespace KitchenChallengeApplication.Interfaces
 {
     public interface IKitchenApplication
     {
-        Task PrepareDish(Order order);
+        Task PrepareOrdersAsync(Queue<Order> orders);
     }
 }

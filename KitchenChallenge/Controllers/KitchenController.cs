@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using KitchenChallenge.Domain.Areas;
 using KitchenChallenge.Domain.Dishes;
+using KitchenChallenge.Domain.Enum;
 using KitchenChallenge.Domain.Order;
 using KitchenChallengeApplication.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -27,27 +28,32 @@ namespace KitchenChallenge.Controllers
         }
 
         [HttpGet("teste")]
-        public void Get()
+        public async Task Get()
         {
-            Order order = new Order()
+            var ordersQueue = new Queue<Order>();
+            
+            Order order1 = new Order()
             {
-                Number = 1,
-                Items = new List<Dish>()
+                Items = new List<Item>()
                 {
-
+                   new Item(){ Type= ItemType.DESERT, Description = "Sundae" },
+                   new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
+                },
+            };
+            
+            Order order2 = new Order()
+            {
+                Items = new List<Item>()
+                {
+                   new Item(){ Type= ItemType.DESERT, Description = "Sundae" },
+                   new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
                 },
             };
 
-            _kitchenApplication.PrepareDish(order);
+            ordersQueue.Enqueue(order1);
+            ordersQueue.Enqueue(order2);
 
-            /*var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();*/
+            await _kitchenApplication.PrepareOrdersAsync(ordersQueue);
         }
     }
 }

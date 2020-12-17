@@ -9,8 +9,19 @@ namespace KitchenChallenge.Domain.Order
     public class Order
     {
         public uint Number { get; set; }
-        public IKitchenArea KitchenArea { get; set; }
         public decimal Amount { get; set; }
-        public List<Dish> Items { get; set; }
+        public List<Item> Items { get; set; }
+
+        public override string ToString()
+        {
+            var output = "";
+            var count = 0;
+            this.Items.ForEach(i => {
+                count++;
+                output += $"{count} - Description: {i.Description} - {i.Size}\n";
+            });
+
+            return output;
+        }
     }
 }

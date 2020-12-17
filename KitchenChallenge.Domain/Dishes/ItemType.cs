@@ -4,9 +4,8 @@ using System.Text;
 
 namespace KitchenChallenge.Domain.Dishes
 {
-    public class Dish
+    public enum ItemType
     {
-        public DishType Type { get; set; }
-        public string Description { get; set; }
+        DESERT, DRINK, FRIES, GRILL, SALAD
     }
 }
