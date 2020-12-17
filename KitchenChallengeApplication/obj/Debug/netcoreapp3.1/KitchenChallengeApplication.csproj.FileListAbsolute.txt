@@ -1,4 +1,0 @@
-C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\netcoreapp3.1\KitchenChallengeApplication.csprojAssemblyReference.cache
-C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\netcoreapp3.1\KitchenChallengeApplication.AssemblyInfoInputs.cache
-C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\netcoreapp3.1\KitchenChallengeApplication.AssemblyInfo.cs
-C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\netcoreapp3.1\KitchenChallengeApplication.csproj.CoreCompileInputs.cache
