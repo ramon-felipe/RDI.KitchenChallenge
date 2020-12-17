@@ -11,10 +11,7 @@ namespace KitchenChallenge.Domain.Areas
         public static DesertArea Instance { get; set; }
         public int OrderNumber { get; private set; }
 
-        private DesertArea()
-        {
-
-        }
+        private DesertArea() {}
 
         public static DesertArea GetInstance()
         {
