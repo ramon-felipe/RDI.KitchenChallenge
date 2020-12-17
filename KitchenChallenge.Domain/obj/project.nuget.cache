@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "fKrOlifTP1M0fS8gG/94TXHoQjAsSZ2mS7/25JVs8ZjG/WwyNyV4n6yYLwcYgqOMUTzjhAi/DhVsoGyFBU4A4g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ramon\\Documents\\Desenvolvimentos\\C#\\RDI\\KitchenChallenge.Domain\\KitchenChallenge.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ramon\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\ramon\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\ramon\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\ramon\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\ramon\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\ramon\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\ramon\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\bin\Debug\net5.0\KitchenChallenge.Application.deps.json
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\bin\Debug\net5.0\KitchenChallenge.Application.dll
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\bin\Debug\net5.0\ref\KitchenChallenge.Application.dll
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\bin\Debug\net5.0\KitchenChallenge.Application.pdb
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\net5.0\KitchenChallenge.Application.csprojAssemblyReference.cache
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\net5.0\KitchenChallenge.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\net5.0\KitchenChallenge.Application.AssemblyInfoInputs.cache
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\net5.0\KitchenChallenge.Application.AssemblyInfo.cs
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\net5.0\KitchenChallenge.Application.csproj.CoreCompileInputs.cache
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\net5.0\KitchenChallenge.Application.dll
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\net5.0\ref\KitchenChallenge.Application.dll
+C:\Users\ramon\Documents\Desenvolvimentos\C#\RDI\KitchenChallengeApplication\obj\Debug\net5.0\KitchenChallenge.Application.pdb
