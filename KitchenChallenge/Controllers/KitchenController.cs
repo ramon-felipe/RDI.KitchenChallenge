@@ -30,30 +30,47 @@ namespace KitchenChallenge.Controllers
         [HttpGet("teste")]
         public async Task Get()
         {
-            var ordersQueue = new Queue<Order>();
-            
-            Order order1 = new Order()
+            try
             {
-                Items = new List<Item>()
-                {
-                   new Item(){ Type= ItemType.DESERT, Description = "Sundae" },
-                   new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
-                },
-            };
+                var ordersQueue = new Queue<Order>();
             
-            Order order2 = new Order()
-            {
-                Items = new List<Item>()
+                Order order1 = new Order()
                 {
-                   new Item(){ Type= ItemType.DESERT, Description = "Sundae" },
-                   new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
-                },
-            };
+                    Items = new List<Item>()
+                    {
+                       new Item(){ Type= ItemType.DESERT, Description = "Sundae" },
+                       new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
+                    },
+                };
+            
+                Order order2 = new Order()
+                {
+                    Items = new List<Item>()
+                    {
+                       new Item(){ Type= ItemType.SALAD, Description = "Ceaser Salad" },
+                       new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
+                    },
+                };
+            
+                Order order3 = new Order()
+                {
+                    Items = new List<Item>()
+                    {
+                       new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.BIG },
+                       new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
+                    },
+                };
 
-            ordersQueue.Enqueue(order1);
-            ordersQueue.Enqueue(order2);
+                ordersQueue.Enqueue(order1);
+                ordersQueue.Enqueue(order2);
+                ordersQueue.Enqueue(order3);
 
-            await _kitchenApplication.PrepareOrdersAsync(ordersQueue);
+                await _kitchenApplication.PrepareOrdersAsync(ordersQueue);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

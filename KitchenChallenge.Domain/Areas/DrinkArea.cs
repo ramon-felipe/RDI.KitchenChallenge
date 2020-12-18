@@ -1,14 +1,24 @@
 ﻿using KitchenChallenge.Domain.Areas.Interfaces;
 using KitchenChallenge.Domain.Dishes;
+using KitchenChallenge.Domain.Enum;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace KitchenChallenge.Domain.Areas
 {
-    public class DrinkArea : IKitchenArea
+    public class DrinkArea : KitchenArea, IKitchenArea
     {
+        private static IReadOnlyDictionary<ItemSizeEnum, int> _CookTime = new Dictionary<ItemSizeEnum, int>()
+        {
+            { ItemSizeEnum.XSMALL, 1000 },
+            { ItemSizeEnum.SMALL, 1200 },
+            { ItemSizeEnum.MEDIUM, 1800 },
+            { ItemSizeEnum.BIG, 2000 },
+            { ItemSizeEnum.XBIG, 2300 },
+        };
         public static DrinkArea Instance { get; set; }
-        private DrinkArea() { }
+        private DrinkArea() : base(_CookTime) { }
 
         public static DrinkArea GetInstance()
         {
@@ -16,15 +26,6 @@ namespace KitchenChallenge.Domain.Areas
                 Instance = new DrinkArea();
 
             return Instance;
-        }
-
-        public async Task PrepareItemAsync(Item item)
-        {
-            Console.WriteLine($"Preparing desert ({item.Description})...");
-
-            await Task.Delay(1000);
-
-            Console.WriteLine($"Desert ({item.Description}) done!");
         }
     }
 }

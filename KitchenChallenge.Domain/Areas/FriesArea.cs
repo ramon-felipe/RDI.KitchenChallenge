@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace KitchenChallenge.Domain.Areas
 {
-    public class FriesArea : IKitchenArea
+    public class FriesArea : KitchenArea, IKitchenArea
     {
-        private IReadOnlyDictionary<ItemSizeEnum, int> friesCookTime = new Dictionary<ItemSizeEnum, int>()
+        private static IReadOnlyDictionary<ItemSizeEnum, int> _CookTime = new Dictionary<ItemSizeEnum, int>()
         {
-            { ItemSizeEnum.XSMALL, 500 },
-            { ItemSizeEnum.SMALL, 1000 },
-            { ItemSizeEnum.MEDIUM, 1500 },
-            { ItemSizeEnum.BIG, 2000 },
-            { ItemSizeEnum.XBIG, 2500 },
+            { ItemSizeEnum.XSMALL, 1000 },
+            { ItemSizeEnum.SMALL, 2000 },
+            { ItemSizeEnum.MEDIUM, 3000 },
+            { ItemSizeEnum.BIG, 4000 },
+            { ItemSizeEnum.XBIG, 5000 },
         };
         public static FriesArea Instance { get; set; }
-        private FriesArea() { }
+        private FriesArea() : base(_CookTime) { }
 
         public static FriesArea GetInstance()
         {
@@ -26,22 +26,6 @@ namespace KitchenChallenge.Domain.Areas
                 Instance = new FriesArea();
 
             return Instance;
-        }
-
-        public async Task PrepareItemAsync(Item item)
-        {
-            Console.WriteLine($"Preparing fries ({item.Description})...");
-
-            if(friesCookTime.TryGetValue(item.Size, out int friesTime))
-            {
-                await Task.Delay(friesTime);
-            }
-            else
-            {
-                throw new Exception("Fries cook time not defined");
-            }
-
-            Console.WriteLine($"Fries ({item.Description}) done!");
         }
     }
 }

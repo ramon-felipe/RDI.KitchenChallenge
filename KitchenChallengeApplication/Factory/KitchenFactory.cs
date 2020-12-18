@@ -11,12 +11,14 @@ namespace KitchenChallenge.Application.Factory
 {
     public class KitchenFactory
     {
-        public static IKitchenArea GetKicthenArea(ItemType dishType)
+        public static IKitchenArea GetKitchenArea(ItemType dishType)
         {
             if (dishType.Equals(ItemType.DESERT))
                 return DesertArea.GetInstance();
             else if (dishType.Equals(ItemType.FRIES))
                 return FriesArea.GetInstance();
+            else if (dishType.Equals(ItemType.SALAD))
+                return SaladArea.GetInstance();
 
             throw new NotImplementedException("We do not have an area to prepare this kind of food.");
         }
