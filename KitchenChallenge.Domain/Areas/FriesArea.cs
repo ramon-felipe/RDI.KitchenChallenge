@@ -1,9 +1,6 @@
 ﻿using KitchenChallenge.Domain.Areas.Interfaces;
-using KitchenChallenge.Domain.Dishes;
-using KitchenChallenge.Domain.Enum;
-using System;
+using KitchenChallenge.Domain.Enums;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace KitchenChallenge.Domain.Areas
 {

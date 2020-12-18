@@ -1,5 +1,5 @@
 ﻿using KitchenChallenge.Domain.Dishes;
-using KitchenChallenge.Domain.Enum;
+using KitchenChallenge.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,12 +17,14 @@ namespace KitchenChallenge.Domain.Areas
         }
 
         public async Task PrepareItemAsync(Item item)
-        {
-            Console.WriteLine($"Preparing {item.Description}...");
-            
+        {            
             if (_CookTime.TryGetValue(item.Size, out int itemTime))
             {
-                Console.WriteLine($"It takes {itemTime} time to be ready...");
+                var itemSizeDesc = Enum.GetName(typeof(ItemType), item.Type);
+                item.SetItemDescription(itemSizeDesc);
+                
+                Console.WriteLine($"Preparing {item.Description}. It takes {itemTime} milliseconds to be ready...");
+                
                 await Task.Delay(itemTime);
             }
             else
