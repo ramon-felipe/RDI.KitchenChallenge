@@ -1,16 +1,24 @@
-﻿using KitchenChallenge.Domain.Areas.Interfaces;
-using KitchenChallenge.Domain.Dishes;
-using System;
+﻿using KitchenChallenge.Domain.Dishes;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace KitchenChallenge.Domain.Order
 {
     public class Order
     {
-        public uint Number { get; set; }
-        public decimal Amount { get; set; }
+        public uint Number { get; private set; }
+        public decimal Amount { get; private set; }
         public List<Item> Items { get; set; }
+
+        public void SetOrderNumber(uint number)
+        {
+            Number = number;
+        }
+
+        public void CalcOrderAmount(Order order)
+        {
+            Amount = order.Items.Sum(i => i.Price);
+        }
 
         public override string ToString()
         {
