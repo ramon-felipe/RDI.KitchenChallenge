@@ -15,12 +15,16 @@ namespace KitchenChallenge.Application.Factory
         {
             if (dishType.Equals(ItemType.DESERT))
                 return DesertArea.GetInstance();
+            else if (dishType.Equals(ItemType.DRINK))
+                return DrinkArea.GetInstance();
             else if (dishType.Equals(ItemType.FRIES))
                 return FriesArea.GetInstance();
+            else if (dishType.Equals(ItemType.GRILL))
+                return GrillArea.GetInstance();
             else if (dishType.Equals(ItemType.SALAD))
                 return SaladArea.GetInstance();
 
-            throw new NotImplementedException("We do not have an area to prepare this kind of food.");
+            throw new NotImplementedException($"We do not have an area to prepare this kind of food.");
         }
     }
 }
