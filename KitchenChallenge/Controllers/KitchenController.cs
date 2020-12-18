@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using KitchenChallenge.Domain.Areas;
-using KitchenChallenge.Domain.Dishes;
-using KitchenChallenge.Domain.Enum;
+﻿using KitchenChallenge.Domain.Dishes;
+using KitchenChallenge.Domain.Enums;
 using KitchenChallenge.Domain.Order;
 using KitchenChallengeApplication.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace KitchenChallenge.Controllers
 {
@@ -27,43 +25,12 @@ namespace KitchenChallenge.Controllers
             _kitchenApplication = kitchenApplication;
         }
 
-        [HttpGet("teste")]
-        public async Task Get()
+        [HttpPost("teste")]
+        public async Task Get([FromBody] IReadOnlyList<Order> ordersList)
         {
             try
             {
-                var ordersQueue = new Queue<Order>();
-            
-                Order order1 = new Order()
-                {
-                    Items = new List<Item>()
-                    {
-                       new Item(){ Type= ItemType.DESERT, Description = "Sundae" },
-                       new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
-                    },
-                };
-            
-                Order order2 = new Order()
-                {
-                    Items = new List<Item>()
-                    {
-                       new Item(){ Type= ItemType.SALAD, Description = "Ceaser Salad" },
-                       new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
-                    },
-                };
-            
-                Order order3 = new Order()
-                {
-                    Items = new List<Item>()
-                    {
-                       new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.BIG },
-                       new Item(){ Type= ItemType.FRIES, Description = "Fries", Size = ItemSizeEnum.SMALL }
-                    },
-                };
-
-                ordersQueue.Enqueue(order1);
-                ordersQueue.Enqueue(order2);
-                ordersQueue.Enqueue(order3);
+                var ordersQueue = new Queue<Order>(ordersList);       
 
                 await _kitchenApplication.PrepareOrdersAsync(ordersQueue);
             }
