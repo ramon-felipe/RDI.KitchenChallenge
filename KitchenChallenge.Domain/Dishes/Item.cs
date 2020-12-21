@@ -1,4 +1,8 @@
-﻿using KitchenChallenge.Domain.Enums;
+﻿using KitchenChallenge.Domain.Areas;
+using KitchenChallenge.Domain.Areas.Interfaces;
+using KitchenChallenge.Domain.Enums;
+using System;
+using System.Collections.Generic;
 
 namespace KitchenChallenge.Domain.Dishes
 {
@@ -6,17 +10,9 @@ namespace KitchenChallenge.Domain.Dishes
     {
         public ItemType Type { get; set; }
         public ItemSizeEnum Size { get; set; }
-        public string Description { get; private set; }
-        public decimal Price { get; private set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
 
-        public void SetItemDescription(string desc)
-        {
-            Description = desc;
-        }
-
-        public void SetItemPrice(decimal price)
-        {
-            Price = price;
-        }
+        public uint CookTime { get; set; }
     }
 }

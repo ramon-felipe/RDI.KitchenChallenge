@@ -6,19 +6,10 @@ namespace KitchenChallenge.Domain.Order
 {
     public class Order
     {
-        public uint Number { get; private set; }
-        public decimal Amount { get; private set; }
+        public decimal Amount {
+            get { return Items.Sum(i => i.Price); ; }
+        }
         public List<Item> Items { get; set; }
-
-        public void SetOrderNumber(uint number)
-        {
-            Number = number;
-        }
-
-        public void CalcOrderAmount(Order order)
-        {
-            Amount = order.Items.Sum(i => i.Price);
-        }
 
         public override string ToString()
         {
@@ -26,7 +17,7 @@ namespace KitchenChallenge.Domain.Order
             var count = 0;
             this.Items.ForEach(i => {
                 count++;
-                output += $"{count} - Description: {i.Description} - {i.Size}\n";
+                output += $"{count} - Description: {i.Description} - {i.Size} - $ {i.Price}\n";
             });
 
             return output;
